@@ -26,9 +26,6 @@ public class HelloController implements Initializable {
     private TableColumn<Books, Integer> ID_Col;
 
     @FXML
-    private Button addbut,deletebut,getdatabut,updatebut;
-
-    @FXML
     private TextField booknameinput,genreinput,inputbookid,realseaseinput;
 
 
@@ -45,7 +42,6 @@ public class HelloController implements Initializable {
     void addData(ActionEvent event) {
         String query = "INSERT INTO Books ( BookName, Genre, ReleaseDate) VALUES (?, ?, ?)";
             executeQuery(query, List.of(booknameinput.getText(), genreinput.getText(), realseaseinput.getText()));
-
         makeEmpty();
     }
 
@@ -53,38 +49,25 @@ public class HelloController implements Initializable {
     void deleteData(ActionEvent event) {
         String query = "DELETE FROM Books WHERE BookID=?";
         executeQuery(query, List.of(inputbookid.getText()));
-
+        makeEmpty();
+    }
+    @FXML
+    void updateData(ActionEvent event) {
+        String query = "UPDATE Books SET BookName=?, Genre=?, ReleaseDate=? WHERE BookID=?";
+        executeQuery(query, List.of(booknameinput.getText(), genreinput.getText(), realseaseinput.getText(), inputbookid.getText()));
         makeEmpty();
     }
 
     @FXML
     void getData(ActionEvent event) {
         showBooks();
-
     }
-
-    @FXML
-    void updateData(ActionEvent event) {
-
-            String query = "UPDATE Books SET BookName=?, Genre=?, ReleaseDate=? WHERE BookID=?";
-            executeQuery(query, List.of(booknameinput.getText(), genreinput.getText(), realseaseinput.getText(), inputbookid.getText()));
-
-        makeEmpty();
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
-
-
-
-
-
     private ObservableList<Books> getBooksList() {
         ObservableList<Books> booksList = FXCollections.observableArrayList();
         String query = "SELECT * FROM Books";
-
         try (Connection conn = Database.getConnection();
              Statement st = conn.createStatement();
              ResultSet rs = st.executeQuery(query)) {
@@ -100,13 +83,10 @@ public class HelloController implements Initializable {
     }
     private void showBooks() {
         ObservableList<Books> list = getBooksList();
-
         ID_Col.setCellValueFactory(new PropertyValueFactory<>("BookID"));
         Book_col.setCellValueFactory(new PropertyValueFactory<>("BookName"));
         gen_col.setCellValueFactory(new PropertyValueFactory<>("Genre"));
         Date_col.setCellValueFactory(new PropertyValueFactory<>("ReleaseDate"));
-
-
         tablefordata.setItems(list);
     }
     private void executeQuery(String query, List<String> parameters) {
@@ -127,6 +107,10 @@ public class HelloController implements Initializable {
                 genreinput.setText("");
                         inputbookid.setText("");
                         realseaseinput.setText("");
+
+    }
+
+    private  void validationInputData(){
 
     }
 
