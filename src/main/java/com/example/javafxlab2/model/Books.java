@@ -1,4 +1,5 @@
-package model;
+package com.example.javafxlab2.model;
+
 
 public class Books {
     private int BookID;

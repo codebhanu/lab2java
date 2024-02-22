@@ -13,10 +13,10 @@
    <children>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="189.0" spacing="20.0" style="-fx-background-color: gray; -fx-border-color: red;">
          <children>
-            <TextField fx:id="inputbookid" alignment="TOP_LEFT" />
-            <TextField fx:id="booknameinput" alignment="TOP_LEFT" />
-            <TextField fx:id="genreinput" alignment="TOP_LEFT" />
-            <TextField fx:id="realseaseinput" alignment="TOP_LEFT" layoutX="11.0" layoutY="151.0" />
+            <TextField fx:id="inputbookid" alignment="TOP_LEFT" promptText="BoookID" />
+            <TextField fx:id="booknameinput" alignment="TOP_LEFT" promptText="BookName" />
+            <TextField fx:id="genreinput" alignment="TOP_LEFT" promptText="Genre" />
+            <TextField fx:id="realseaseinput" alignment="TOP_LEFT" layoutX="11.0" layoutY="151.0" promptText="Release Date" />
             <Label fx:id="error" />
             <Button fx:id="addbut" mnemonicParsing="false" onAction="#addData" prefHeight="26.0" prefWidth="60.0" style="-fx-background-color: green;" text="Add" textAlignment="CENTER" textFill="#fff6f6" />
             <Button fx:id="updatebut" mnemonicParsing="false" onAction="#updateData" style="-fx-background-color: green;" text="Update" textAlignment="CENTER" textFill="#fff6f6" />

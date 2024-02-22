@@ -12,7 +12,8 @@ private static  final String userName="root";
 private static   final String password="";
 
 public static Connection getConnection() throws SQLException {
- return DriverManager.getConnection(url,userName,password);
+  return  DriverManager.getConnection(url,userName,password);
+
 }
 
 }
