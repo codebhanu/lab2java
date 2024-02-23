@@ -22,7 +22,7 @@
                   <TextField fx:id="booknameinput" alignment="TOP_LEFT" promptText="BookName" />
                   <TextField fx:id="genreinput" alignment="TOP_LEFT" promptText="Genre" />
                   <TextField fx:id="realseaseinput" alignment="TOP_LEFT" layoutX="11.0" layoutY="151.0" promptText="Release Date" />
-                  <Label fx:id="error" />
+                  <Label fx:id="error" prefHeight="35.0" prefWidth="153.0" textFill="#f21717" />
                   <Button fx:id="addbut" mnemonicParsing="false" onAction="#addData" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #180330;" text="Add" textAlignment="CENTER" textFill="WHITE" />
                   <Button fx:id="updatebut" mnemonicParsing="false" onAction="#updateData" prefHeight="26.0" prefWidth="67.0" style="-fx-background-color: #180330;" text="Update" textAlignment="CENTER" textFill="WHITE" />
                   <Button fx:id="deletebut" mnemonicParsing="false" onAction="#deleteData" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: red;" text="Delete" textAlignment="CENTER" textFill="#fff6f6" />
@@ -31,6 +31,7 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Button>
+                  <Button mnemonicParsing="false" onAction="#viewData" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #180330;" text="View" textFill="#f2eaea" />
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
